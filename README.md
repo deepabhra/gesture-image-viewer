@@ -34,7 +34,7 @@ cd gesture-image-viewer
 pip install opencv-python numpy cvzone
 ```
 ## Add Your Images
-- Drop your `.jpg`, `.png`, `.jpeg`, `.bmp`, `.gif` images in the folder.
+- Drop your `.jpg`, `.png`, `.jpeg`, `.bmp`, `.gif` images in the `resources` folder.
 
 ## Run It
 ```bash
