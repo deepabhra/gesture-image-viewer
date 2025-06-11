@@ -8,8 +8,8 @@ This Python project lets you **view, zoom, delete, and switch images** with just
 - 🖼️ **Image Viewing** from a folder
 - 🤏 **Zoom In/Out** with pinch gestures on both hands
 - ⬅️➡️ **Next/Previous Image** navigation using hand flicks
-- 🗑️ **Delete Image** with a fist (left hand)
-- ✋ **Exit App** with a closed fist (right hand)
+- 🗑️ **Delete Image** with a fist (right hand)
+- ✋ **Exit App** with a closed fist (left hand)
 - 💬 Real-time gesture feedback printed in both terminal & webcam window
 - 🧠 Gesture cooldown + smoothing buffer to avoid accidental triggers
 
@@ -25,7 +25,7 @@ This Python project lets you **view, zoom, delete, and switch images** with just
 ### 1. Clone This Repo
 
 ```bash
-git clone https://github.com/your-username/gesture-image-viewer.git
+git clone https://github.com/deepabhra/gesture-image-viewer.git
 cd gesture-image-viewer
 ```
 ## Install Requirements
@@ -44,12 +44,12 @@ python image_viewer.py
 ## ✋ Gesture Controls
 | Gesture                   | Hand       | Action         |
 | ------------------------- | ---------- | -------------- |
-| ✊ Fist (all fingers down) | Right Hand | Exit viewer    |
-| ✊ Fist (all fingers down) | Left Hand  | Delete image   |
+| ✊ Fist (all fingers down) | Right Hand | Delete image    |
+| ✊ Fist (all fingers down) | Left Hand  | Exit viewer   |
 | 🤏 Pinch fingers inward   | Both Hands | Zoom out       |
 | 🤏 Spread fingers out     | Both Hands | Zoom in        |
-| 👋 4 fingers up           | Left Hand  | Previous image |
-| 👋 4 fingers up           | Right Hand | Next image     |
+| 👋 4 fingers up           | Left Hand  | Next image |
+| 👋 4 fingers up           | Right Hand | Previous image     |
 
 ## 💡 To-Do & Future Upgrades
 - ✅ Support for image viewing ✅
@@ -65,3 +65,7 @@ Building the future, one gesture at a time.
 
 Connect with me:\
 [📸 Instagram](https://www.instagram.com/deep_abhra/)
+
+## ⚠️ Disclaimer / Warning
+
+This code is designed to work with standard webcams, which typically flip the image horizontally (mirror view). If your camera does not flip the image, the hand detection logic may be reversed: your right hand will be detected as the left hand, and your left hand as the right hand. In such cases, please assume that the gestures for the right and left hands are swapped.
