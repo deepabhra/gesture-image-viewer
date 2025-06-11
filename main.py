@@ -7,7 +7,7 @@ from collections import deque
 from cvzone.HandTrackingModule import HandDetector
 
 # === Config ===
-image_folder = r"E:\college\Sem_VI\Project\air_gester\resources"
+image_folder = r"E:\college\Sem_VI\Project\gesture-image-viewer\resources"
 zoom_step = 0.05
 min_zoom = 0.1
 max_zoom = 5.0
@@ -76,7 +76,7 @@ while True:
         break
 
     frame = cv2.flip(frame, 1)
-    hands, img = detector.findHands(frame)
+    hands, img = detector.findHands(frame, draw = False)
     left_hand, right_hand = None, None
     current_time = time.time()
 
@@ -88,6 +88,23 @@ while True:
                 right_hand = hand
             else:
                 left_hand = hand
+        
+        # Draw connection dots and lines for each hand
+        for hand in hands:
+            lmList = hand["lmList"]
+            # Draw dots
+            for lm in lmList:
+                cv2.circle(frame, (lm[0], lm[1]), 7, (0, 255, 0), cv2.FILLED)
+            # Draw connections (lines)
+            connections = [
+                (0, 1), (1, 2), (2, 3), (3, 4),      # Thumb
+                (0, 5), (5, 6), (6, 7), (7, 8),      # Index
+                (0, 9), (9,10), (10,11), (11,12),    # Middle
+                (0,13), (13,14), (14,15), (15,16),   # Ring
+                (0,17), (17,18), (18,19), (19,20)    # Pinky
+            ]
+            for start, end in connections:
+                cv2.line(frame, (lmList[start][0], lmList[start][1]), (lmList[end][0], lmList[end][1]), (255, 0, 0), 2)
 
         # Handle exit gesture (right hand with all fingers down)
         if right_hand and detector.fingersUp(right_hand) == [0, 0, 0, 0, 0]:
@@ -125,10 +142,10 @@ while True:
 
         # Handle image navigation gestures
         elif left_hand and detector.fingersUp(left_hand) == [0, 1, 1, 1, 1]:
-            gesture_buffer.append("prev")
+            gesture_buffer.append("next")
 
         elif right_hand and detector.fingersUp(right_hand) == [0, 1, 1, 1, 1]:
-            gesture_buffer.append("next")
+            gesture_buffer.append("prev")
 
         if len(gesture_buffer) == gesture_buffer.maxlen and all(g == "next" for g in gesture_buffer):
             if current_time - last_gesture_time > gesture_cooldown:
