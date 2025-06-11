@@ -48,8 +48,8 @@ python image_viewer.py
 | ✊ Fist (all fingers down) | Left Hand  | Exit viewer   |
 | 🤏 Pinch fingers inward   | Both Hands | Zoom out       |
 | 🤏 Spread fingers out     | Both Hands | Zoom in        |
-| 👋 4 fingers up           | Left Hand  | Next image |
-| 👋 4 fingers up           | Right Hand | Previous image     |
+| 👋 4 fingers up           | Left Hand  | Previous image |
+| 👋 4 fingers up           | Right Hand | Next image     |
 
 ## 💡 To-Do & Future Upgrades
 - ✅ Support for image viewing ✅
