@@ -82,7 +82,7 @@ The complete project report includes:
 - References
 
 📘 **Read the full report here:**
-[Project Report (PDF)](./Air_Gesture_Controlled_Media_Viewer_Using_Webcam_and_OpenCV.pdf)
+[Project Report (PDF)](./Air%20Gesture%20Controlled%20Media%20Viewer%20Using%20Webcam%20and%20OpenCV.pdf)
 
 ## ⚠️ Disclaimer / Warning
 
