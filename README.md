@@ -66,6 +66,24 @@ Building the future, one gesture at a time.
 Connect with me:\
 [📸 Instagram](https://www.instagram.com/deep_abhra/)
 
+## 📄 Project Report
+
+This project was developed as my final-year B.Sc. Computer Science project at Visva-Bharati University.
+
+The complete project report includes:
+- Project overview
+- System architecture
+- Methodology
+- Workflow
+- Code explanation
+- Results & Output
+- Future Scope
+- Conclusion
+- References
+
+📘 **Read the full report here:**
+[Project Report (PDF)](./Air_Gesture_Controlled_Media_Viewer_Using_Webcam_and_OpenCV.pdf)
+
 ## ⚠️ Disclaimer / Warning
 
 This code is designed to work with standard webcams, which typically flip the image horizontally (mirror view). If your camera does not flip the image, the hand detection logic may be reversed: your right hand will be detected as the left hand, and your left hand as the right hand. In such cases, please assume that the gestures for the right and left hands are swapped.
